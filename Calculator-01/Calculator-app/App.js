@@ -3,15 +3,26 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
-      SafeA
-    </View>
+      <View style={styles.resultContainer}>
+        <Text style={styles.resultText}>This is a Text</Text>
+      </View>
+      <View style={styles.inputContainer}>
+
+      </View>
+
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+  }, resultContainer: {
+
+  }, resultText: {
+
+  }, inputContainer: {
+
   },
 });
