@@ -55,12 +55,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap'
   }, button: {
-    fontSize: 24,
     width: "25%",
     height: "20%",
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth:1,
     borderColer:"#ccc"
+  }, buttonText: {
+    fontSize: 24
   },
 });
