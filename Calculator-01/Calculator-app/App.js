@@ -4,11 +4,27 @@ import { StyleSheet, Text, View, SafeAreaView, TextInput, Touchable, TouchableOp
 
 export default function App() {
   const[ input, setInput ] = useState('')
+  const[ result,setResult] = useState('')
+
+  const onButtonPress = (value) => {
+    if(value === "="){
+      try{
+        setResult(eval(input));
+      } catch(error){
+        setResult('error')
+      }
+    } else if(value === "c"){
+      setInput('');
+      setResult('');
+    } else {
+      setInput(input + value)
+    }
+  }
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.resultContainer}>
-        <Text style={styles.resultText}>This is a Text</Text>
+        <Text style={styles.resultText}>{result}</Text>
       </View>
       <View style={styles.inputContainer}>
         <TextInput 
