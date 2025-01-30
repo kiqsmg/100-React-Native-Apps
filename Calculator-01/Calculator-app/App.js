@@ -33,7 +33,8 @@ export default function App() {
         onChangeText={setInput}
         keyboardType='numeric'
         />
-        <View style={styles.buttonContainer}>
+      </View>
+      <View style={styles.buttonContainer}>
           {['7','8','9','/','4','5','6','*','1','2','3','-','0','c','=','+'].map(
             (item,index) =>(
               <TouchableOpacity
@@ -46,7 +47,6 @@ export default function App() {
             )
           )}
         </View>
-      </View>
     </SafeAreaView>
   );
 }
