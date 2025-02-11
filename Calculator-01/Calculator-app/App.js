@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 
-function App() {
+export default function App() {
 
   const buttons = [
     'C', '±', '%', '/',
@@ -38,4 +38,55 @@ function App() {
   );
 }
 
-export default App
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  displayContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    padding: 20,
+  },
+  inputText: {
+    color: '#fff',
+    fontSize: 48,
+    marginBottom: 10,
+  },
+  resultText: {
+    color: '#fff',
+    fontSize: 64,
+  },
+  buttonContainer: {
+    flex: 2,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    padding: 10,
+  },
+  button: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 5,
+    backgroundColor: '#333',
+  },
+  zeroButton: {
+    width: 170, // Wider button for '0'
+    alignItems: 'flex-start',
+    paddingLeft: 30,
+  },
+  operatorButton: {
+    backgroundColor: '#FF9500',
+  },
+  functionButton: {
+    backgroundColor: '#A5A5A5',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 32,
+  },
+});
