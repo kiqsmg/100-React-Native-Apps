@@ -12,8 +12,30 @@ function App() {
   ];
   
   return (
-    <div>App</div>
-  )
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="light"/>
+      <View style={styles.displayContainer }>
+        <Text style={styles.inputText}>{input}</Text>
+        <Text style={styles.resultText}>{result}</Text>
+      </View>
+      <View stle={styles.buttonContainer}>
+        {buttons.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[
+              styles.button,
+              item === '0' && styles.zeroButton, //Special styling for the zero button
+              (item === '/' || item === '*' || item === '-' || item === '+' || item === '=') && styles.operatorButton,
+              (item === 'C' || item === '±' || item === '%') && styles.functionButton,
+            ]}
+            onPress={() => handleButtonPress(item)}
+          >
+            <Text style={styles.buttonText}>{item}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    </SafeAreaView>
+  );
 }
 
 export default App
