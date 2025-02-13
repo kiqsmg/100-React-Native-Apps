@@ -6,6 +6,27 @@ export default function App() {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
 
+  const handleButtonPress = (value) => {
+    if (value === '=') {
+      calculateResult();
+    } else if (value === 'C') {
+      setInput('');
+      setResult('');
+    } else if (value === '±') {
+      setInput((prev) => (prev.startsWith('-') ? prev.slice(1) : `-${prev}`));
+    } else if (value === '%') {
+      setInput((prev) => (parseFloat(prev) / 100).toString());
+    } else {
+      setInput(input + value);
+    }
+  };
+
+
+
+
+  
+}
+
   const buttons = [
     'C', '±', '%', '/',
     '7', '8', '9', '*',
