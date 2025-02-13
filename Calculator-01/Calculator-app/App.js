@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 
 export default function App() {
+
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
 
   const buttons = [
     'C', '±', '%', '/',
