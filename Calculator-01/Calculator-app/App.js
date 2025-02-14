@@ -21,6 +21,23 @@ export default function App() {
     }
   };
 
+  const calculateResult = () => {
+
+  }
+
+  const evaluateExpression = (expression) => {
+    //Help function to handle multiplication and division
+
+    const evaluateTerm = (term) => {
+      const numbers = term.split(/[*/]/).map(Number);
+      const operators = term.split(/\d+/).filter(Boolean);
+      let result = numbers[0];
+      for (let i = 0; i < operators.length; i++) {
+
+      }
+    }
+  }
+
 
 
 
