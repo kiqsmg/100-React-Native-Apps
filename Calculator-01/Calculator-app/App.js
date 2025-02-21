@@ -22,12 +22,17 @@ export default function App() {
   };
 
   const calculateResult = () => {
-
-  }
+    try {
+      const sanitizedInput = input.replace(/[^-()\d/*+.]/g, '');
+      const calculatedResult = evaluateExpression(sanitizedInput);
+      setResult(calculatedResult.toString());
+    } catch {
+      setResult('Error');
+    }
+  };
 
   const evaluateExpression = (expression) => {
     //Help function to handle multiplication and division
-
     const evaluateTerm = (term) => {
       const numbers = term.split(/[*/]/).map(Number); //splits the input into an aray of only numbers
       const operators = term.split(/\d+/).filter(Boolean); //splits the input into an aray of only booleans
