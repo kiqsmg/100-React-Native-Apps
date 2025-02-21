@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
 
@@ -66,20 +67,20 @@ export default function App() {
     '0', '.', '=',
   ];
   
-  return (
+return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style="light"/>
-      <View style={styles.displayContainer }>
+      <StatusBar style="light" />
+      <View style={styles.displayContainer}>
         <Text style={styles.inputText}>{input}</Text>
         <Text style={styles.resultText}>{result}</Text>
       </View>
-      <View stle={styles.buttonContainer}>
+      <View style={styles.buttonContainer}>
         {buttons.map((item, index) => (
           <TouchableOpacity
             key={index}
             style={[
               styles.button,
-              item === '0' && styles.zeroButton, //Special styling for the zero button
+              item === '0' && styles.zeroButton, // Special style for the '0' button
               (item === '/' || item === '*' || item === '-' || item === '+' || item === '=') && styles.operatorButton,
               (item === 'C' || item === '±' || item === '%') && styles.functionButton,
             ]}
