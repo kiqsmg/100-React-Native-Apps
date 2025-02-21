@@ -39,14 +39,19 @@ export default function App() {
       return result;
     };
 
+    const terms = expression.split(/([+-])/);
+    let total = evaluateTerm(terms[0]);
 
-  }
+    for (let i = 0; i < terms.length; i+=2) {
+      const operator = terms[i];
+      const term = terms[i + 1];
+      const value = evaluateTerm(term);
+      if (operator === '+') total += value;
+      else if (operator === '-') total -= value;
+    }
 
-
-
-
-  
-}
+    return total;
+  };
 
   const buttons = [
     'C', '±', '%', '/',
