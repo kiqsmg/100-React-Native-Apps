@@ -29,13 +29,17 @@ export default function App() {
     //Help function to handle multiplication and division
 
     const evaluateTerm = (term) => {
-      const numbers = term.split(/[*/]/).map(Number);
-      const operators = term.split(/\d+/).filter(Boolean);
+      const numbers = term.split(/[*/]/).map(Number); //splits the input into an aray of only numbers
+      const operators = term.split(/\d+/).filter(Boolean); //splits the input into an aray of only booleans
       let result = numbers[0];
       for (let i = 0; i < operators.length; i++) {
-
+        if (operators[i] === '*') result *= numbers[i + 1 ];
+        else if (operators[i] === '/') result /= numbers[i +1 ];
       }
-    }
+      return result;
+    };
+
+
   }
 
 
