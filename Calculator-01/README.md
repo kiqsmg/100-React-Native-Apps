@@ -22,3 +22,9 @@ A simple calculator project built using Javascript with REACT NATIVE and EXPO GO
    git clone https://github.com/your-username/calculator-project.git
 
 
+## 🧩 Putting It All Together
+1- User presses "2"-> currentDisplay becomes "2"(state 01)
+2- Presses "+"-> saves 2 to firstNumber, sets operation (state 02)
+3- Presses "8"-> updates currentDisplay (state 03)
+4- Presses "="-> calculates using save values (state 04)
+
