@@ -1,9 +1,16 @@
-import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
+// Import a series of components from React Native
+// Dimensions ---> Alolow you to get the screen dimensions of the device (width and height)
+// StyleSheet ---> Create styles in a performant and organized way (similar to CSS)
+// Text ---> Displays text
+// TouchbleOpacity ---> Wrapper for making views resppond to touches (like hover?) 
 
+import { Dimensions, StyleSheet, Text, TouchableOpacity } from "react-native";
+// Create a functional React Component (function taht accepts properties as input and returns JSX)
 export default ({ onPress, text, size, theme }) => {
   const buttonStyles = [styles.button];
   const textStyles = [styles.text];
 
+  // This reusable button adapts based on the size and theme props
   if (size === "double") {
     buttonStyles.push(styles.buttonDouble);
   }
@@ -23,7 +30,9 @@ export default ({ onPress, text, size, theme }) => {
 };
 
 // set dimmenstion
+// Fetches screen dimensions
 const screen = Dimensions.get("window");
+// Divides screen width into 4
 const buttonWidth = screen.width / 4;
 
 const styles = StyleSheet.create({
