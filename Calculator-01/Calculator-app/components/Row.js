@@ -1,5 +1,7 @@
+// Import StyleSheet and View Components
 import { StyleSheet, View } from "react-native";
 
+// Create Row reusable component that arranges its children horizontally using flexDirection
 const Row = ({ children }) => {
   return <View style={styles.container}>{children}</View>;
 };
