@@ -1,3 +1,13 @@
+// Import React from react ---> import the CORE react lib
+// Import Component from react ---> destructures the component class, letting create class components
+// Import SafeAreaView ---> Wrapper for device padding safety (garanty responsiviness)
+// Import StyleSheet ---> give style to the components
+// Import Text ---> display text
+// Import View ---> display boxes
+// Import Button and Row ---> Components alredy created
+// Import calculator from util ---> logic module handling calculations
+// Import initialState from util ---> Default state for the calculator {displayValue: "0"}
+
 import React, { Component } from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import Button from "./components/Button";
