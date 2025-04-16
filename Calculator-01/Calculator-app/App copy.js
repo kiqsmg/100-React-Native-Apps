@@ -14,21 +14,30 @@ import Button from "./components/Button";
 import Row from "./components/Row";
 import calculator, { initialState } from "./util/calculator";
 
-// create class component of App
+// create class component of App --> create react component called App
 export default class App extends Component {
+  // Stores the starting values for the calculation
   state = initialState;
 
-  // handle tap method
+  // handle tap method --> handles all button presses
+  // this.seState Gets current state
+  // Type receives what type of button it was
+  // Value has the associated value (number or operator)
+  // Updates the new state values based on the calculation the 'calculator' function has given back to us
   HandleTap = (type, value) => {
     this.setState((state) => calculator(type, value, state));
   };
 
-  // render method
+  // render method --> returns a View with the calculator UI elements
   render() {
     return (
       <View style={styles.container}>
         {/* Status bae here */}
         <SafeAreaView>
+          {/* Displays a text for the current calculator's number --> 
+          this.state.currentValue gets current number stored in the calculators memory( it updates every time you press a button) -->
+           parseFloat converts the value to a float -->
+            .toLocaleString formats the numberwith proper decimals symbols as ','and '.'  */}
           <Text style={styles.value}>
             {parseFloat(this.state.currentValue).toLocaleString()}
           </Text>
