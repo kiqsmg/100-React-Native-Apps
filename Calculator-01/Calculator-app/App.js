@@ -45,7 +45,7 @@ export default class App extends Component {
           {/* Do create componentRow */}
           <Row>
             <Button
-              text="C"
+              text="AC"
               theme="secondary"
               onPress={() => this.HandleTap("clear")}
             />
@@ -108,7 +108,7 @@ export default class App extends Component {
             <Button text="." onPress={() => this.HandleTap("number", ".")} />
             <Button
               text="="
-              theme="primary"
+              theme="accent"
               onPress={() => this.HandleTap("equal", "=")}
             />
           </Row>
@@ -122,7 +122,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#202020",
+    backgroundColor: "#000000",
     justifyContent: "flex-end",
   },
   value: {

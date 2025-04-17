@@ -37,7 +37,7 @@ const buttonWidth = screen.width / 4;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#333333",
+    backgroundColor: "#222222",
     flex: 1,
     height: Math.floor(buttonWidth - 10),
     alignItems: "center",
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   text: {
-    color: "#fff",
-    fontSize: 24,
+    color: "#ffff",
+    fontSize: 32,
   },
   textSecondary: {
     color: "#060606",
@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
   },
   buttonSecondary: {
-    backgroundColor: "#a6a6a6",
+    backgroundColor: "#787878",
   },
   buttonAccent: {
-    backgroundColor: "#ffc107",
+    backgroundColor: "#ff9407",
   },
 });
