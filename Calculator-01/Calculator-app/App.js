@@ -39,7 +39,7 @@ export default class App extends Component {
            parseFloat converts the value to a float -->
             .toLocaleString formats the numberwith proper decimals symbols as ','and '.'  */}
           <Text style={styles.value}>
-            {parseFloat(this.state.currentValue).toLocaleString()}
+            {this.state.expression}
           </Text>
 
           {/* Do create componentRow */}
