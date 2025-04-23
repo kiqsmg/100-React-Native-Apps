@@ -2,7 +2,7 @@
 
 A simple calculator project built using Javascript with REACT NATIVE and EXPO GO.
 
-<img src="[temp-Imagehqu-A5l.avif](https://postimg.cc/FkkCYWhN)" alt="Project Banner">
+<img src="https://postimg.cc/FkkCYWhN" alt="Project Banner">
 
 ## 🌟 Features
  - Basic operations
