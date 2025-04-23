@@ -2,7 +2,8 @@
 
 A simple calculator project built using Javascript with REACT NATIVE and EXPO GO.
 
-<img src="[![temp-Imagehqu-A5l.avif](https://i.postimg.cc/GtqWSVN8/temp-Imagehqu-A5l.avif)](https://postimg.cc/FkkCYWhN)" alt="Project Banner">
+<img width="80%" src="https://github.com/kiqsmg/100-React-Native-Apps/Calculator-01/fotos/calculator.jpeg">
+
 
 ## 🌟 Features
  - Basic operations
