@@ -1,3 +1,4 @@
+// Import React, Components and all the react native components that will be used
 import React, { Component } from "react";
 import {
   StyleSheet,
@@ -6,9 +7,11 @@ import {
   Dimensions,
   StatusBar,
   TouchableOpacity,
-  Platform
+  Platform,
+  Vibration
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import { Audio } from 'expo-av';
 
 const screen = Dimensions.get("window");
 
@@ -16,9 +19,17 @@ const screen = Dimensions.get("window");
 class Timer {
   constructor(callback) {
     this.startTime = 0;
+    this.endTime = 0;
     this.elapsed = 0;
     this.timer = null;
     this.callback = callback;
+  }
+
+  async playSound() {
+    const { sound } = await Audio.Sound.createAsync(
+      require('./assets/tone/tone.mp3') // ajuste o caminho conforme necessário
+    );
+    await sound.playAsync();
   }
 
   start() {
@@ -26,6 +37,22 @@ class Timer {
     this.timer = setInterval(() => {
       this.elapsed = Date.now() - this.startTime;
       this.callback(this.elapsed);
+    }, 10);
+  }
+
+  startCountdown(duration) {
+    this.startTime = Date.now();
+    this.endTime = this.startTime + duration;
+    this.timer = setInterval(() => {
+      const remaining = this.endTime - Date.now();
+      if (remaining <= 0) {
+        clearInterval(this.timer);
+        this.callback(0);
+        Vibration.vibrate(); // Vibração ao fim do tempo
+        this.playSound();
+      } else {
+        this.callback(remaining);
+      }
     }, 10);
   }
 
@@ -44,8 +71,8 @@ const formatTime = (time) => {
   const minutes = date.getUTCMinutes().toString().padStart(2, '0');
   const seconds = date.getUTCSeconds().toString().padStart(2, '0');
   const milliseconds = Math.floor(date.getUTCMilliseconds() / 10).toString().padStart(2, '0');
-  
-  return hours !== '00' 
+
+  return hours !== '00'
     ? `${hours}:${minutes}:${seconds}.${milliseconds}`
     : `${minutes}:${seconds}.${milliseconds}`;
 };
@@ -75,7 +102,16 @@ export default class App extends Component {
   }
 
   start = () => {
-    this.timer.start();
+    const { selectedMinutes, selectedSeconds } = this.state;
+    const totalDuration =
+      parseInt(selectedMinutes) * 60 * 1000 +
+      parseInt(selectedSeconds) * 1000;
+
+    if (totalDuration > 0) {
+      this.timer.startCountdown(totalDuration);
+    } else {
+      this.timer.start();
+    }
     this.setState({ isRunning: true });
   };
 
@@ -87,10 +123,10 @@ export default class App extends Component {
   reset = () => {
     this.timer.stop();
     this.timer.reset();
-    this.setState({ 
+    this.setState({
       elapsedTime: 0,
       isRunning: false,
-      laps: [] 
+      laps: []
     });
   };
 
@@ -139,11 +175,10 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
-        
         <Text style={styles.timerText}>{formatTime(elapsedTime)}</Text>
-        
+
         {!isRunning && this.renderPickers()}
-        
+
         <View style={styles.buttonRow}>
           {isRunning ? (
             <>
