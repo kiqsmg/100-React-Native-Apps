@@ -5,6 +5,12 @@ A fully functional calculator app built with React Native and Expo Go, featuring
 <img width="20%" src="https://raw.githubusercontent.com/kiqsmg/100-React-Native-Apps/main/Calculator-01/fotos/calculator.jpeg">
 
 
+## Youtube step by step video
+- Components: https: [//youtu.be/2Ja7smKzHd4?si=l5BuH6KAvUbdHBnf](https://www.youtube.com/watch?v=2Ja7smKzHd4&t=340s)
+- Calculator logic: [https://www.youtube.com/watch?v=C3JhoAg4HQ4&t=28s](https://www.youtube.com/watch?v=C3JhoAg4HQ4&t=28s)
+- Puting it all together: 
+
+
 
 ## 🌟 Features
  - **Basic Operations**: Addition, Subtraction, Multiplication, Division
