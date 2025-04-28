@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import styles from "../styles";
+import { AVAILABLE_MINUTES, AVAILABLE_SECONDS } from "../utils/createArray"; // Add this import
 
 const PickerGroup = ({ selectedMinutes, selectedSeconds, onMinutesChange, onSecondsChange }) => (
   <View style={styles.pickerContainer}>
