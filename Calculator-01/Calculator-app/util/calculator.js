@@ -1,13 +1,10 @@
-// Initial state value stored
-
 export const initialState = {
-    currentValue: "0",    //stores the current value
-    operator: null,       // stores the current operator symbol
-    previousValue: null,  // stores first operand for operations
+    currentValue: "0",
+    operator: null,
+    previousValue: null,
     expression: "0",
   };
-  
-  // manages how numbers are input into the calculator
+
   export const handleNumber = (value, state) => {
     if (state.currentValue === "0") {
       return { 
@@ -21,7 +18,6 @@ export const initialState = {
     };
   };
   
-  //Core calculation code ---> performs the requested arithmetic operation
   const handleEqual = (state) => {
     const { currentValue, previousValue, operator, expression } = state;
     const current = parseFloat(currentValue);
@@ -53,7 +49,6 @@ export const initialState = {
     };
   };
   
-  // calculator function that works as a central dispatcher for all calculator operations
   const calculator = (type, value, state) => {
     switch (type) {
       case "number":
