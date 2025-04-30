@@ -6,8 +6,8 @@ A fully functional calculator app built with React Native and Expo Go, featuring
 
 
 ## Youtube step by step video
-- Components: https: [//youtu.be/2Ja7smKzHd4?si=l5BuH6KAvUbdHBnf](https://www.youtube.com/watch?v=2Ja7smKzHd4&t=340s)
-- Calculator logic: [https://www.youtube.com/watch?v=C3JhoAg4HQ4&t=28s](https://www.youtube.com/watch?v=C3JhoAg4HQ4&t=28s)
+- Components: https: [//youtu.be/2Ja7smKzHd4?si=l5BuH6KAvUbdHBnf](https://www.youtube.com/watch?v=2Ja7smKzHd4&t=0s)
+- Calculator logic: [https://www.youtube.com/watch?v=C3JhoAg4HQ4&t=28s](https://www.youtube.com/watch?v=C3JhoAg4HQ4&t=0s)
 - Puting it all together: [https://youtu.be/w0AYUcKs4yM?si=jMQEiwGYf0y0sT7K](https://www.youtube.com/watch?v=w0AYUcKs4yM&t=0s)
 
 
